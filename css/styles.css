@@ -1,1 +1,157 @@
-/* PRUEBA */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #003366 0%, #0056b3 50%, #4facfe 100%);
+    background-attachment: fixed;
+    padding: 40px 20px;
+    color: #333;
+}
+
+.caja-formulario {
+    background-color: #ffffff;
+    padding: 40px;
+    max-width: 650px;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.caja-formulario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #003366, #00b4d8);
+}
+
+.header-imagen {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-imagen img {
+    max-width: 100%;
+    height: auto;
+    max-height: 110px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #003366;
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #eaeaea;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    color: #444;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f8f9fa;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #00b4d8;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.25);
+}
+
+/* Ocultar inicialmente los inputs de escribir personalizaciones */
+#inputOtraEmpresa, 
+#inputOtroCurso,
+#inputOtroCP {
+    display: none;
+    margin-top: 8px;
+}
+
+.grupo-radio {
+    display: flex;
+    gap: 30px;
+    margin-top: 5px;
+}
+
+.grupo-radio label {
+    font-weight: 400;
+    text-transform: none;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    accent-color: #003366;
+    transform: scale(1.2);
+    margin-right: 6px;
+}
+
+/* Estilo estricto para bloquear por completo y mostrar cursor prohibido */
+select:disabled, input:disabled {
+    background-color: #e9ecef !important;
+    color: #6c757d !important;
+    border-color: #ced4da !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #003366, #0056b3);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+    margin-top: 25px;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #002244, #003d82);
+    box-shadow: 0 6px 16px rgba(0, 51, 102, 0.4);
+    transform: translateY(-2px);
+}

@@ -1,13 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<script src="js/app.js"></script>
-<body>
-    <h1>HELLO WORLD</h1>
+    <title>Formulario de Inscripción Curso</title>
     
+    <!-- Tipografía Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- JS -->
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <div class="caja-formulario">
+        
+        <div class="header-imagen">
+            <img src="img/IMAGEN.webp" alt="Banner SENATI">
+        </div>
+
+        <h2>Formulario de Inscripción Curso</h2>
+        <p>Rellene cuidadosamente el formulario de inscripción</p>
+        <hr>
+
+        <form id="formularioCurso" action="php/enviar.php" method="POST">
+            
+            <label>Nombre del alumno:</label>
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="text" name="segundo_nombre" placeholder="Segundo Nombre">
+            <input type="text" name="apellido" placeholder="Apellido" required>
+
+            <label>Fecha de nacimiento (MM-DD-YYYY):</label>
+            <input type="date" name="fecha_nacimiento" required>
+
+            <label>Género:</label>
+            <select name="genero" required>
+                <option value="">Seleccione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+
+            <label>Dirección de la calle:</label>
+            <input type="text" name="direccion_1" required>
+
+            <label>Dirección de la calle Línea 2:</label>
+            <input type="text" name="direccion_2">
+
+            <label>Ciudad:</label>
+            <input type="text" name="ciudad" value="Lima" required>
+
+            <label>Estado Provincia:</label>
+            <input type="text" name="estado_provincia" value="Lima" required>
+
+            <!-- Código Postal / Distrito de Lima -->
+            <label>Código Postal (Distrito - Lima):</label>
+            <select name="codigo_postal" id="selectCodigoPostal" required>
+                <option value="">Seleccione su distrito / código postal</option>
+                <option value="15001">Lima Cercado (15001)</option>
+                <option value="15036">Miraflores (15036)</option>
+                <option value="15027">San Isidro (15027)</option>
+                <option value="15038">Santiago de Surco (15038)</option>
+                <option value="15084">San Miguel (15084)</option>
+                <option value="15083">Pueblo Libre (15083)</option>
+                <option value="15063">Chorrillos (15063)</option>
+                <option value="15088">Los Olivos (15088)</option>
+                <option value="15108">San Martin de Porres (15108)</option>
+                <option value="15011">San Juan de Lurigancho (15011)</option>
+                <option value="15801">Ate Vitarte (15801)</option>
+                <option value="15086">Bellavista / Callao (07011)</option>
+                <option value="15112">Ventanilla (07051)</option>
+                <option value="otro">Escribe otro código postal / distrito...</option>
+            </select>
+            <input type="text" id="inputOtroCP" name="codigo_postal_otro" placeholder="Escribe tu código postal o distrito aquí">
+
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="ejemplo@ejemplo.com" required>
+
+            <label>Número de teléfono:</label>
+            <input type="text" name="telefono" placeholder="(000) 000-0000" required>
+
+            <label>Ha recibido otros cursos anteriormente:</label>
+            <div class="grupo-radio">
+                <label><input type="radio" name="cursos_anteriores" id="radioSi" value="Si" required> Sí</label>
+                <label><input type="radio" name="cursos_anteriores" id="radioNo" value="No"> No</label>
+            </div>
+
+            <!-- Empresa -->
+            <label id="labelEmpresa">Empresa:</label>
+            <select id="selectEmpresa" name="empresa_select" required>
+                <option value="">Seleccione empresa</option>
+                <option value="SENATI">SENATI</option>
+                <option value="Telefónica / Movistar">Telefónica / Movistar</option>
+                <option value="Entel Perú">Entel Perú</option>
+                <option value="Backus">Backus</option>
+                <option value="BCP">BCP</option>
+                <option value="otra">Escribe tu propia empresa...</option>
+            </select>
+            <input type="text" id="inputOtraEmpresa" name="empresa_otra" placeholder="Escribe el nombre de tu empresa aquí">
+
+            <!-- Cursos -->
+            <label id="labelCursos">Cursos:</label>
+            <select name="cursos" id="selectCursos" required>
+                <option value="">Seleccione un curso</option>
+                <option value="Lógica y Programación Web">Lógica y Programación Web</option>
+                <option value="Desarrollo Web Fullstack">Desarrollo Web Fullstack</option>
+                <option value="Bases de Datos SQL">Bases de Datos SQL</option>
+                <option value="Ciberseguridad y Redes">Ciberseguridad y Redes</option>
+                <option value="Python para la Web">Python para la Web</option>
+                <option value="otro">Escribe tu propio curso...</option>
+            </select>
+            <input type="text" id="inputOtroCurso" name="curso_otro" placeholder="Escribe el nombre de tu curso aquí">
+
+            <label>Comentarios adicionales:</label>
+            <textarea name="comentarios" rows="4"></textarea>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+    </div>
+
 </body>
 </html>
